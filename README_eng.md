@@ -1,204 +1,131 @@
-# BISON Rule Inspection Engine
+<p align="left">
+🇺🇸 <a href="README_eng.md">English</a> |
+🇰🇷 <a href="README.md">한국어</a>
+</p>
 
-**High‑Performance Industrial Vision Inspection Library**
+<p align="center">
+  <img src="assets/bison_banner.png" width="100%" alt="BISON AI Banner">
+</p>
 
-BISON Rule Inspection Engine is a **high‑speed C++ based rule‑inspection
-library** designed for industrial machine vision systems.\
-It integrates essential inspection algorithms such as **Edge, Circle,
-Line, Measurement, and Barcode recognition** into a single optimized
-engine.
+# <img src="assets/Guernsey_icon.png" width="40"> GUERNSEY (BISON Rule Inspection Engine)
 
-The engine is designed for **real‑time production environments**,
-enabling reliable and fast inspection for smart factory applications.
+**High-Performance Industrial Rule-Based Vision Engine**
 
-------------------------------------------------------------------------
+BISON Rule Inspection Engine is a high-performance **C++-based rule inspection engine**
+designed for industrial machine vision inspection systems.
 
-# Why BISON Rule Inspection Engine
+Core machine vision algorithms such as  
+**Subpixel Edge Localization, Hough-based Circle and Line Detection,  
+Least-Squares Geometric Fitting, and Precision Metrology**
+are integrated into a high-speed inspection pipeline.
 
-Modern manufacturing requires inspection systems that are **fast,
-reliable, and scalable across platforms**.
+This enables **stable real-time inspection performance even in high-speed production environments.**
 
-BISON provides a **modular inspection engine** that can be easily
-integrated into:
+The engine is designed to run the **same inspection logic** on both
 
--   PC‑based Vision Inspection Systems
--   Smart Factory Inspection Equipment
--   Edge AI Vision Devices
--   Automated Production Lines
+- **Linux-based Edge Vision devices**
+- **Windows-based PC Vision systems**
 
-One inspection engine can run consistently across **Windows, Linux, and
-Edge AI devices**.
+A single inspection engine can support **both Edge Vision devices and PC Vision systems simultaneously.**
 
-------------------------------------------------------------------------
+---
 
-# Key Advantages
+# 🧠 Industrial Rule Inspection Engine
 
-## High‑Speed Industrial Processing
+In industrial inspection environments, the following characteristics are critical:
 
-Optimized C++ algorithms enable real‑time inspection performance
-suitable for high‑speed production lines.
+- Deterministic Inspection  
+- Real-Time Processing  
+- Stable System Operation  
+- High-Speed Image Processing  
 
-Typical processing capabilities:
+The BISON Rule Inspection Engine is designed with a  
+**rule inspection architecture optimized for industrial inspection systems.**
 
--   Edge Detection
--   Circle Detection
--   Line Detection
--   Geometry Measurement
--   Barcode Recognition
+Unlike AI-based inspection, rule-based inspection provides several advantages:
 
-The engine is designed to maintain **stable performance under continuous
-industrial operation**.
+- **Predictable inspection results**
+- **Faster processing speed**
+- **Explainable inspection logic**
+- **Long-term stable operation**
 
-------------------------------------------------------------------------
+Because of these characteristics, rule-based inspection remains  
+a **core technology in industrial production inspection systems.**
 
-## Industrial‑Ready Architecture
+---
 
-The inspection engine is provided as a **standalone DLL / shared
-library**, making integration simple and robust.
+# 📘 Supported Inspection Algorithms
 
-Benefits include:
+BISON Rule Inspection Engine provides the following core inspection algorithms.
 
--   Easy integration into existing vision systems
--   Modular architecture
--   Reliable industrial operation
--   Scalable inspection pipeline
+| Category | Algorithms |
+|---|---|
+| Edge Extraction | Canny Edge Detector, Subpixel Edge Localization |
+| Geometric Detection | Hough Circle Transform, Hough Line Transform |
+| Geometric Fitting | Least Squares Line Fit, Circle Fit, Arc Fit |
+| Blob Analysis | Connected Component Labeling, Blob Feature Extraction |
+| Precision Measurement | Distance Measurement, Angle Measurement, Gap / Offset Measurement |
+| Shape Matching | Shape-Based Matching, Template Matching (NCC) |
+| Pattern Recognition | 1D Barcode Decoding, Pattern Detection |
+| Image Enhancement | Adaptive Thresholding, Morphological Filtering |
+| Contour Processing | Contour Extraction, Shape Descriptor Analysis |
 
-This design allows manufacturers to upgrade inspection capabilities
-**without redesigning the entire system**.
+All algorithms are implemented in **optimized C++ code**
+for high-speed industrial inspection environments.
 
-------------------------------------------------------------------------
+---
 
-## Cross‑Platform Vision Engine
+# ⚙️ Cross Platform Vision Engine
 
-The core inspection engine is implemented in **C++**, enabling
-deployment across multiple environments.
+The BISON inspection engine is designed to run  
+the **same inspection logic across multiple platforms.**
 
-Supported environments:
+| Platform | Support |
+|---|---|
+| Windows (PC) Vision System | ✔ |
+| Linux (Edge) Vision System | ✔ |
 
-  Platform                   Support
-  -------------------------- ---------
-  Windows Vision Systems     ✔
-  Linux Vision Systems       ✔
-  Edge AI Devices (Jetson)   ✔
+This architecture enables the following inspection system configurations:
 
-This enables the same inspection algorithm to run on **PC inspection
-equipment and Edge AI devices**.
+- Windows PC Vision Inspection System  
+- Linux Edge Vision Inspection Device  
+- Inline Production Inspection System  
+- Smart Factory Vision Inspection System  
 
-------------------------------------------------------------------------
+A single inspection engine can support **both PC Vision and Edge Vision environments.**
 
-# System Architecture
+---
 
-Typical inspection pipeline:
+# 🔄 High-Speed Inspection Performance
 
-Camera\
-↓\
-Image Acquisition\
-↓\
-Pre‑Processing\
-↓\
-**BISON Rule Inspection Engine**\
-↓\
-Feature Extraction\
-↓\
-Inspection Decision (OK / NG)\
-↓\
-PLC / MES / Production System
+BISON Rule Inspection Engine is designed to provide  
+stable inspection performance even in high-speed production environments.
 
-This modular architecture allows manufacturers to build **scalable
-inspection systems for automated production lines**.
+| Inspection Type | Processing Time |
+|---|---|
+| Edge + Geometry Inspection | ~1–3 ms |
+| Barcode Detection | ~2–5 ms |
+| Full Inspection Pipeline | ~5–10 ms |
 
-------------------------------------------------------------------------
+The engine is optimized to maintain **real-time inspection performance**
+in real production environments.
 
-# Supported Inspection Algorithms
+---
 
-  Category             Examples
-  -------------------- ----------------------------------
-  Edge Detection       Sobel, Canny
-  Geometry Detection   Circle Detection, Line Detection
-  Measurement          Distance, Angle
-  Recognition          Barcode Detection
-  Filtering            Threshold, Morphology
+# 🧩 Inspection Pipeline
 
-Additional inspection modules can be integrated depending on production
-requirements.
+```mermaid
+flowchart TB
 
-------------------------------------------------------------------------
+A[Vision Pipeline]
 
-# Example Integration
+A --> B[Preprocessing]
+A --> C[Rule Engine]
+A --> D[Feature Extraction]
+A --> E[Rule Evaluation]
 
-``` cpp
-BisonInspectEngine engine;
-
-engine.LoadConfig("inspection_config.json");
-
-InspectionResult result = engine.Run(image);
-
-if(result.isOK)
-{
-    SendPLC_OK();
-}
-else
-{
-    SendPLC_NG();
-}
-```
-
-The inspection engine can be integrated into **C++, C#, or industrial
-vision software systems**.
-
-------------------------------------------------------------------------
-
-# Typical Performance
-
-Typical inspection speed (depending on resolution and hardware):
-
-  Inspection Type            Processing Time
-  -------------------------- -----------------
-  Edge + Geometry            \~1--3 ms
-  Barcode Detection          \~2--5 ms
-  Full Inspection Pipeline   \~5--10 ms
-
-The engine is optimized for **real‑time inspection in high‑speed
-production environments**.
-
-------------------------------------------------------------------------
-
-# Typical Applications
-
-BISON Rule Inspection Engine is suitable for a wide range of industrial
-applications:
-
--   Automotive component inspection
--   Smart factory inspection systems
--   Inline production inspection
--   Edge AI vision systems
--   High‑speed industrial quality control
-
-------------------------------------------------------------------------
-
-# About BISON Vision Platform
-
-BISON Rule Inspection Engine is a core component of the **BISON Vision
-Platform**, a next‑generation industrial vision solution designed for
-smart manufacturing.
-
-The platform integrates:
-
--   Vision Inspection Software
--   AI Inspection Engine
--   Rule‑Based Inspection Engine
--   Edge Vision Devices
--   Industrial Inspection Systems
-
-Together these technologies enable **high‑performance automated
-inspection for modern manufacturing**.
-
-------------------------------------------------------------------------
-
-# Contact
-
-**BISON Vision Lab**\
-Industrial AI Vision Systems\
-Smart Factory Inspection Solutions
-
-For integration or partnership inquiries, please contact the BISON team.
+C --> C1[Edge Detection]
+C --> C2[Circle Detection]
+C --> C3[Line Detection]
+C --> C4[Barcode Recognition]
+C --> C5[Etc]
