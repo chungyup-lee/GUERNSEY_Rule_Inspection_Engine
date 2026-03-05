@@ -14,8 +14,9 @@
 BISON Rule Inspection Engine은 산업용 머신비전 검사 시스템을 위해 설계된  
 고성능 **C++ 기반 룰 검사 엔진**입니다.
 
-Edge Detection, Circle Detection, Line Detection, Geometry Measurement, Barcode Recognition 등  
-핵심 머신비전 알고리즘을 **고속 검사 파이프라인**으로 통합하여  
+Subpixel Edge Localization, Hough-based Circle and Line Detection,
+Least-Squares Geometric Fitting, Precision Metrology,
+Industrial Barcode Decoding 등 핵심 머신비전 알고리즘을 **고속 검사 파이프라인**으로 통합하여  
 **고속 생산라인 환경에서도 안정적인 실시간 검사 성능**을 제공합니다.
 
 본 엔진은 **Linux 기반 Edge Vision 장비** 와  
