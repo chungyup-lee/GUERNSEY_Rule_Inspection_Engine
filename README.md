@@ -1,4 +1,13 @@
-# BISON 룰 기반 비전 검사 엔진
+<p align="left">
+🇺🇸 <a href="README_eng.md">English</a> |
+🇰🇷 <a href="README.md">한국어</a>
+</p>
+
+<p align="center">
+  <img src="assets/bison_banner.png" width="100%" alt="BISON AI Banner">
+</p>
+
+# <img src="assets/Guernsey_icon.png" width="40"> GUERNSEY (BISON Rule Inspection Engine) 
 
 **고속 산업용 머신비전 룰 검사 라이브러리**
 
